@@ -68,12 +68,12 @@ Telegram Telegram Telegram
 > Add your workflow screenshot inside a folder named `screenshots`.
 
 ```text
-screenshots/workflow.png
+screenshots/Workflow.png
 ```
 
 Example:
 
-![Workflow](screenshots/workflow.png)
+![Workflow](screenshots/Workflow.png)
 
 ---
 
