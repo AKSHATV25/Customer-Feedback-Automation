@@ -1,71 +1,191 @@
-# Customer Feedback Automation using n8n
+# 🤖 AI Customer Feedback Automation using n8n
 
-## Overview
+An intelligent no-code workflow built with **n8n** that automatically classifies customer feedback using **Groq AI**, stores it in **Airtable**, sends **Telegram notifications**, and emails personalized acknowledgements to customers.
 
-This project automates customer feedback management using n8n.
+---
 
-The workflow classifies customer feedback into:
+## 🚀 Features
+
+- 📝 Accepts customer feedback through an n8n Form.
+- 🤖 Uses **Groq LLM** to classify feedback into:
+  - Complaint
+  - Compliment
+  - Feature Addition Request
+- 🔀 Automatically routes feedback using a **Switch** node.
+- 📊 Stores categorized feedback in separate Airtable tables.
+- 📲 Sends instant Telegram notifications to the administrator.
+- 📧 Sends personalized acknowledgement emails to customers.
+- ⚡ Fully automated workflow with no manual intervention.
+
+---
+
+## 🛠️ Tech Stack
+
+- **n8n**
+- **Groq API (LLM)**
+- **Airtable**
+- **Telegram Bot API**
+- **Gmail**
+- AI Agent
+- Switch Node
+- Merge Node
+
+---
+
+## 📋 Workflow
+
+```
+Customer Form
+      │
+      ▼
+ AI Agent (Groq)
+      │
+      ▼
+    Merge Node
+      │
+      ▼
+   Switch Node
+      │
+ ┌────┼────┐
+ │    │    │
+ ▼    ▼    ▼
+Complaint  Compliment  Feature Request
+ │          │             │
+ ▼          ▼             ▼
+Airtable Airtable Airtable
+ │          │             │
+ ▼          ▼             ▼
+Telegram Telegram Telegram
+ │          │             │
+ ▼          ▼             ▼
+ Gmail     Gmail       Gmail
+```
+
+---
+
+## 📷 Workflow Screenshot
+
+> Add your workflow screenshot inside a folder named `screenshots`.
+
+```text
+screenshots/workflow.png
+```
+
+Example:
+
+![Workflow](screenshots/workflow.png)
+
+---
+
+## 📂 Project Structure
+
+```
+Customer-Feedback-Automation
+│
+├── workflow.json
+├── README.md
+├── LICENSE
+└── screenshots
+    └── workflow.png
+```
+
+---
+
+## 📊 Airtable Tables
+
+The workflow stores records in three separate Airtable tables:
+
 - Complaint
 - Compliment
 - Feature Addition Request
 
-Based on the classification, the workflow:
-- Stores the feedback in Airtable
-- Sends a Telegram notification
-- Sends an acknowledgment email to the customer
+Each record contains:
+
+- Full Name
+- Email
+- Feedback
+- Category
 
 ---
 
-## Technologies Used
+## 📲 Telegram Notification
 
-- n8n
-- Groq LLM
-- Airtable
-- Gmail API
-- Telegram Bot API
+Whenever a customer submits feedback, the administrator instantly receives a Telegram notification.
 
----
+Example:
 
-## Workflow
+```
+🚨 Customer Complaint
 
-1. Customer submits the form.
-2. AI classifies the feedback.
-3. Switch node routes it.
-4. Data is stored in Airtable.
-5. Telegram notification is sent.
-6. Customer receives an email acknowledgment.
+👤 Name: Rahul Sharma
+
+📝 Feedback:
+The application crashes while uploading files.
+```
 
 ---
 
-## Features
+## 📧 Customer Acknowledgement
 
-- AI-powered feedback classification
-- Automated database storage
-- Telegram alerts
-- Personalized email responses
-- No manual intervention
+Customers automatically receive an acknowledgement email based on the feedback category.
+
+### Complaint
+
+- Confirmation that the complaint has been received.
+- Assurance that the support team will review it.
+
+### Compliment
+
+- Thank-you message for the positive feedback.
+
+### Feature Addition Request
+
+- Confirmation that the suggestion has been forwarded to the product team.
 
 ---
 
-## Screenshots
+## ⚙️ Installation
 
-(Add screenshots here)
+1. Clone this repository.
 
----
+```bash
+git clone https://github.com/AKSHATV25/Customer-Feedback-Automation.git
+```
 
-## Installation
-
-1. Clone the repository.
 2. Import `workflow.json` into n8n.
-3. Configure:
-   - Airtable API
-   - Telegram Bot
-   - Gmail
-   - Groq API Key
-4. Run the workflow.
+
+3. Configure your credentials:
+
+- Groq API
+- Airtable
+- Telegram Bot
+- Gmail
+
+4. Activate the workflow.
 
 ---
 
-## Author
+## 📈 Future Improvements
 
-Akshat Vishnoi
+- Slack Integration
+- Microsoft Teams Notifications
+- Dashboard & Analytics
+- Weekly Email Reports
+- Sentiment Score
+- Multi-language Support
+
+---
+
+## 👨‍💻 Author
+
+**Akshat Vishnoi**
+
+B.Tech CSE (AI & ML)
+
+GitHub: https://github.com/AKSHATV25
+
+---
+
+## ⭐ If you like this project
+
+Give this repository a ⭐ on GitHub!
